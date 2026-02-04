@@ -3,7 +3,10 @@ function MessageItem({ message, onSelect }) {
 
   return (
     <div className="message-item" onClick={() => onSelect(message)}>
-      <strong>{message.author}</strong> : {message.text}
+      <strong>
+        {message.author}
+      </strong>
+      {message.text}
     </div>
   );
 }

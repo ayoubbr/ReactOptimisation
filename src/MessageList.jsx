@@ -1,11 +1,15 @@
 import MessageItem from "./MessageItem";
 
-function MessageList({ messages, onSelect }) {
+function MessageList({ messages, search, onSelect }) {
   console.log("Render Message List");
+
+  const filtredMessages = messages.filter(msg =>
+    msg.text.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="message-list">
-      {messages.map(msg =>
+      {filtredMessages.map(msg =>
         <MessageItem key={msg.id} message={msg} onSelect={onSelect} />
       )}
     </div>

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import MessageList from "./MessageList";
 import "./App.css";
@@ -33,7 +32,11 @@ function App() {
           />
         </div>
 
-        <MessageList messages={messagesData} onSelect={handleSelect} />
+        <MessageList
+          messages={messagesData}
+          search={search}
+          onSelect={handleSelect}
+        />
 
         {selectedMessage &&
           <div className="message-details">
