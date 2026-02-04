@@ -18,25 +18,31 @@ function App() {
   };
 
   return (
-    <div>
-      <h2>Messages</h2>
+    <div className="app-container">
+      <div className="glass-panel">
+        <div className="header">
+          <h2>Messages</h2>
+        </div>
 
-      <input
-        type="text"
-        placeholder="Search messages..."
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search messages..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
 
-      <MessageList messages={messagesData} onSelect={handleSelect} />
+        <MessageList messages={messagesData} onSelect={handleSelect} />
 
-      {selectedMessage &&
-        <div>
-          <h3>Message Details</h3>
-          <p>
-            {selectedMessage.text}
-          </p>
-        </div>}
+        {selectedMessage &&
+          <div className="message-details">
+            <h3>Message Details</h3>
+            <p>
+              {selectedMessage.text}
+            </p>
+          </div>}
+      </div>
     </div>
   );
 }
