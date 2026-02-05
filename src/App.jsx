@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import MessageList from "./MessageList";
 import "./App.css";
 
@@ -12,9 +12,9 @@ function App() {
   const [search, setSearch] = useState("");
   const [selectedMessage, setSelectedMessage] = useState(null);
 
-  const handleSelect = message => {
+  const handleSelect = useCallback(message => {
     setSelectedMessage(message);
-  };
+  }, []);
 
   return (
     <div className="app-container">

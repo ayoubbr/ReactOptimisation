@@ -1,4 +1,6 @@
-function MessageItem({ message, onSelect }) {
+import React from "react";
+
+const MessageItem = React.memo(({ message, onSelect }) => {
   console.log("Render MessageItem:", message.id);
 
   return (
@@ -9,6 +11,6 @@ function MessageItem({ message, onSelect }) {
       {message.text}
     </div>
   );
-}
+});
 
 export default MessageItem;

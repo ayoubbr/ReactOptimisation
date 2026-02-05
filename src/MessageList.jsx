@@ -1,10 +1,16 @@
+import { useMemo } from "react";
 import MessageItem from "./MessageItem";
 
 function MessageList({ messages, search, onSelect }) {
   console.log("Render Message List");
 
-  const filtredMessages = messages.filter(msg =>
-    msg.text.toLowerCase().includes(search.toLowerCase())
+  const filtredMessages = useMemo(
+    () => {
+      return messages.filter(msg =>
+        msg.text.toLowerCase().includes(search.toLowerCase())
+      );
+    },
+    [messages, search]
   );
 
   return (
